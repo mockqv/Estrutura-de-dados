@@ -39,3 +39,34 @@ export function removeItemQueue(queue) {
     // Se a fila estiver vazia, exibe uma mensagem de erro
     console.error("A fila está vazia");
 }
+
+// Função para retornar o primeiro elemento da fila, sem removê-lo
+export function peek(queue) {
+    if (queue[0] !== undefined) {
+        console.log(`Primeiro elemento da fila: "${queue[0]}".`);
+        return queue[0];
+    }
+    console.error("A fila está vazia, não há elementos para espiar.");
+    return undefined;
+}
+
+// Função para verificar se a fila está vazia
+export function isEmpty(queue) {
+    for (let i = 0; i < queue.length; i++) {
+        if (queue[i] !== undefined) {
+            return false;
+        }
+    }
+    console.log("A fila está vazia.");
+    return true;
+}
+
+// Função para verificar se a fila está cheia
+export function isFull(queue) {
+    for (let i = 0; i < queue.length; i++) {
+        if (queue[i] === undefined) {
+            return false;
+        }
+    }
+    return true;
+}

@@ -30,33 +30,25 @@ export function removeItem(pilha) {
             pilha[i] = undefined;
             console.log(`Item "${removedItem}" removido da pilha.`);
             console.log(pilha);
-            return;
+            return removeItem;
         }
     }
     // Se a pilha estiver vazia, exibe uma mensagem de erro
     console.error("A pilha está vazia");
 }
 
-// Função para procurar um item na pilha
-export function findItem(pilha, item) {
-    // Itera sobre a pilha para encontrar o item
-    for (let i = 0; i < pilha.length; i++) {
-        if (pilha[i] === item) {
-            console.log(`Item "${item}" encontrado na posição "${i}" da pilha.`);
-            return i;
+// Função para espiar o topo da pilha, sem removê-lo
+export function peek(pilha) {
+    // Itera sobre a pilha de trás para frente para encontrar o último item adicionado
+    for (let i = pilha.length - 1; i >= 0; i--) {
+        if (pilha[i] !== undefined) {
+            console.log(`Elemento do topo da pilha: "${pilha[i]}".`);
+            return pilha[i];
         }
     }
-    // Se o item não for encontrado, exibe uma mensagem de erro
-    console.error("Item não foi encontrado");
-}
-
-// Função para deletar todos os itens da pilha
-export function deleteAllItems(pilha) {
-    // Itera sobre a pilha e define todos os itens como undefined
-    for (let i = 0; i < pilha.length; i++) {
-        pilha[i] = undefined;
-    }
-    console.log("Todos os itens da pilha foram deletados com sucesso", pilha);
+    // Se a pilha estiver vazia, exibe uma mensagem de erro
+    console.error("A pilha está vazia, não há elementos para espiar.");
+    return undefined;
 }
 
 // Função para checar se a pilha está vazia
@@ -67,5 +59,16 @@ export function isEmpty(pilha) {
             return false;
         }
     }
+    return undefined;
+}
+
+// Função para verificar se a pilha está cheia
+export function isFull(pilha) {
+    for (let i = 0; i < pilha.length; i++) {
+        if (pilha[i] === undefined) {
+            return false;
+        }
+    }
+    console.log("A pilha está cheia.");
     return true;
 }
