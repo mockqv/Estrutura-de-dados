@@ -1,13 +1,15 @@
 {
   "name": "pilha",
   "version": "1.0.0",
-  "description": "",
-  "type": "module",
+  "description": "Implementação de Pilha (Stack) em JavaScript.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "keywords": [],
+  "keywords": [
+    "pilha",
+    "stack"
+  ],
   "author": "",
   "license": "ISC"
 }

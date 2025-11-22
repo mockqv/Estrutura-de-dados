@@ -1,13 +1,15 @@
 {
-  "name": "new",
+  "name": "fila",
   "version": "1.0.0",
-  "description": "",
-  "type": "module",
+  "description": "Implementação de Fila (Queue) em JavaScript.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "keywords": [],
+  "keywords": [
+    "fila",
+    "queue"
+  ],
   "author": "",
   "license": "ISC"
 }

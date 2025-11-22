@@ -1,74 +1,69 @@
-// Função para criar uma pilha com um tamanho específico
-export function createPilha(tamanhoDaPilha = 10) {
-    // Retorna um array com o tamanho especificado, preenchido com 'undefined'
-    return [...new Array(tamanhoDaPilha)];
+// Define a classe da Pilha (Stack)
+class Pilha {
+  constructor(capacidade = 10) {
+    this.itens = [];         // Array para armazenar os elementos da pilha
+    this.capacidade = capacidade; // A capacidade máxima da pilha
+    this.topo = -1;          // Ponteiro para o topo da pilha, -1 significa vazia
+  }
+
+  // Adiciona um item ao topo da pilha (push)
+  empilhar(item) {
+    if (this.estaCheia()) {
+      console.error("Não foi possível empilhar: a pilha está cheia.");
+      return;
+    }
+    this.topo++;
+    this.itens[this.topo] = item;
+    console.log(`Item "${item}" foi empilhado.`);
+  }
+
+  // Remove e retorna o item do topo da pilha (pop)
+  desempilhar() {
+    if (this.estaVazia()) {
+      console.error("Não foi possível desempilhar: a pilha está vazia.");
+      return null;
+    }
+    const itemRemovido = this.itens[this.topo];
+    this.itens.length = this.topo; // Efetivamente remove o elemento
+    this.topo--;
+    console.log(`Item "${itemRemovido}" foi desempilhado.`);
+    return itemRemovido;
+  }
+
+  // Retorna o item do topo da pilha sem removê-lo (peek)
+  espiar() {
+    if (this.estaVazia()) {
+      console.log("A pilha está vazia, não há elementos para espiar.");
+      return null;
+    }
+    const itemDoTopo = this.itens[this.topo];
+    console.log(`Elemento do topo da pilha: "${itemDoTopo}".`);
+    return itemDoTopo;
+  }
+
+  // Verifica se a pilha está vazia
+  estaVazia() {
+    return this.topo === -1;
+  }
+
+  // Verifica se a pilha está cheia
+  estaCheia() {
+    return this.topo === this.capacidade - 1;
+  }
+
+  // Imprime o conteúdo da pilha
+  imprimir() {
+    if (this.estaVazia()) {
+      console.log("Pilha: [] (vazia)");
+      return;
+    }
+    let conteudo = [];
+    for (let i = 0; i <= this.topo; i++) {
+      conteudo.push(this.itens[i]);
+    }
+    console.log(`Pilha: [${conteudo.join(', ')}] <- topo`);
+  }
 }
 
-// Função para adicionar um item à pilha
-export function addItem(pilha, item) {
-    // Itera sobre a pilha para encontrar o primeiro espaço vazio (undefined)
-    for (let i = 0; i < pilha.length; i++) {
-        if (pilha[i] === undefined) {
-            // Adiciona o item no primeiro espaço vazio encontrado
-            pilha[i] = item;
-            console.log(`"${item}" foi adicionado, na posição "${i}" da pilha`);
-            console.log(pilha);
-            return;
-        }
-    }
-    // Se não houver espaço vazio, exibe uma mensagem de erro
-    console.error("Não foi possível adicionar item, a pilha está cheia");
-}
-
-// Função para remover um item da pilha
-export function removeItem(pilha) {
-    // Itera sobre a pilha de trás para frente para encontrar o último item adicionado
-    for (let i = pilha.length - 1; i >= 0; i--) {
-        if (pilha[i] !== undefined) {
-            // Remove o último item encontrado
-            const removedItem = pilha[i];
-            pilha[i] = undefined;
-            console.log(`Item "${removedItem}" removido da pilha.`);
-            console.log(pilha);
-            return removeItem;
-        }
-    }
-    // Se a pilha estiver vazia, exibe uma mensagem de erro
-    console.error("A pilha está vazia");
-}
-
-// Função para espiar o topo da pilha, sem removê-lo
-export function peek(pilha) {
-    // Itera sobre a pilha de trás para frente para encontrar o último item adicionado
-    for (let i = pilha.length - 1; i >= 0; i--) {
-        if (pilha[i] !== undefined) {
-            console.log(`Elemento do topo da pilha: "${pilha[i]}".`);
-            return pilha[i];
-        }
-    }
-    // Se a pilha estiver vazia, exibe uma mensagem de erro
-    console.error("A pilha está vazia, não há elementos para espiar.");
-    return undefined;
-}
-
-// Função para checar se a pilha está vazia
-export function isEmpty(pilha) {
-    // Itera sobre a pilha para verificar se há algum item
-    for (let i = 0; i < pilha.length; i++) {
-        if (pilha[i] !== undefined) {
-            return false;
-        }
-    }
-    return undefined;
-}
-
-// Função para verificar se a pilha está cheia
-export function isFull(pilha) {
-    for (let i = 0; i < pilha.length; i++) {
-        if (pilha[i] === undefined) {
-            return false;
-        }
-    }
-    console.log("A pilha está cheia.");
-    return true;
-}
+// Exporta a classe para ser usada em outros arquivos com CommonJS
+module.exports = Pilha;
