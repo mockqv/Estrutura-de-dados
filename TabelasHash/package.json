@@ -1,0 +1,17 @@
+{
+  "name": "tabelas-hash",
+  "version": "1.0.0",
+  "description": "Implementação de Tabela Hash (Dicionário) em JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "hash",
+    "table",
+    "dicionario",
+    "map"
+  ],
+  "author": "",
+  "license": "ISC"
+}
