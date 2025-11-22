@@ -1,0 +1,17 @@
+{
+  "name": "lista-encadeada",
+  "version": "1.0.0",
+  "description": "Implementação de Lista Encadeada em JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "lista",
+    "encadeada",
+    "linked",
+    "list"
+  ],
+  "author": "",
+  "license": "ISC"
+}

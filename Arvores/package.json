@@ -1,0 +1,17 @@
+{
+  "name": "arvores",
+  "version": "1.0.0",
+  "description": "Implementação de Árvore de Busca Binária em JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "arvore",
+    "binaria",
+    "bst",
+    "tree"
+  ],
+  "author": "",
+  "license": "ISC"
+}
