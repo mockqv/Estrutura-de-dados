@@ -1,0 +1,16 @@
+{
+  "name": "grafos",
+  "version": "1.0.0",
+  "description": "Implementação de Grafos com Lista de Adjacência em JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "grafo",
+    "graph",
+    "adjacencia"
+  ],
+  "author": "",
+  "license": "ISC"
+}
