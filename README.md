@@ -1,32 +1,43 @@
+# Estruturas de Dados em JavaScript
 
-# Estruturas de Dados: Pilha e Fila em JavaScript
+Este repositório contém implementações de diversas estruturas de dados fundamentais utilizando JavaScript. O objetivo é fornecer exemplos claros, idiomáticos e padronizados em português.
 
-Este repositório contém implementações simples de estruturas de dados de Pilha e Fila em JavaScript, com foco na lógica fundamental, sem o uso de métodos prontos.
+Cada estrutura é implementada como uma classe e está contida em seu próprio diretório, com uma implementação limpa e um arquivo de exemplo.
 
-## Pilha (Stack)
+## Estruturas Implementadas
 
-A pilha segue o princípio LIFO (Last-In, First-Out), onde o último elemento a entrar é o primeiro a sair. Imagine uma pilha de livros: o último livro que você coloca no topo é o primeiro que você remove.
+-   **[Pilha](./Pilha/)**: Estrutura que segue o princípio LIFO (Last-In, First-Out), ou "o último a entrar é o primeiro a sair".
+-   **[Fila](./Fila/)**: Estrutura que segue o princípio FIFO (First-In, First-Out), ou "o primeiro a entrar é o primeiro a sair".
+-   **[Lista Encadeada](./ListaEncadeada/)**: Coleção linear e dinâmica de nós, onde cada nó aponta para o próximo.
+-   **[Árvore de Busca Binária](./Arvores/)**: Estrutura de árvore hierárquica que permite buscas, inserções e remoções eficientes.
+-   **[Grafo](./Grafos/)**: Conjunto de vértices e arestas, ideal para modelar redes e conexões. A implementação utiliza uma lista de adjacência.
+-   **[Tabela Hash](./TabelasHash/)**: Estrutura que mapeia chaves a valores para buscas extremamente rápidas, com tratamento de colisões.
 
-## Fila (Queue)
+## Padrão do Projeto
 
-A fila segue o princípio FIFO (First-In, First-Out), onde o primeiro elemento a entrar é o primeiro a sair. Pense em uma fila de banco: a primeira pessoa a chegar é a primeira a ser atendida.
+-   **Linguagem**: Todo o código, comentários e documentação estão em **português**.
+-   **Implementação**: As estruturas são implementadas usando **Classes** do ES6.
+-   **Módulos**: O projeto utiliza **CommonJS** (`require`/`module.exports`) para consistência.
+-   **Estrutura**: Cada diretório é um módulo autocontido com:
+    -   `index.js`: Demonstração de uso da estrutura.
+    -   `[estrutura].js`: A implementação da classe da estrutura.
+    -   `package.json`: Com um script `start` para rodar a demonstração.
+    -   `README.md`: Explicação teórica sobre a estrutura.
 
-## Como usar
+## Como Usar
 
-Cada pasta (`Pilha` e `Fila`) contém os seguintes arquivos:
+Para executar a demonstração de qualquer uma das estruturas, navegue até o diretório desejado e execute o script `start`.
 
-*   `index.js`: Arquivo principal para testar a estrutura de dados.
-*   `pilha.js` / `function.js`: Contém a lógica da estrutura de dados.
-*   `package.json`: Arquivo de configuração do Node.js.
-
-Para executar os exemplos, você pode usar o Node.js:
+Por exemplo, para testar a **Pilha**:
 
 ```bash
 cd Pilha
-node index.js
+npm start
 ```
 
+Para testar a **Árvore**:
+
 ```bash
-cd Fila
-node index.js
+cd Arvores
+npm start
 ```
